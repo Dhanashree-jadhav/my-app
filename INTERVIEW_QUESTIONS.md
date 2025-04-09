@@ -79,8 +79,7 @@ This document contains common interview questions about Jenkins and CI/CD, along
                             }
                         }
                     }
-                }
-         <br>           
+                }         
         Advantages: Easier to maintain, supports visual editing in Jenkins Blue Ocean.
   <br>
         Scripted Pipeline:
