@@ -43,21 +43,32 @@ This document contains common interview questions about Jenkins and CI/CD, along
        }
 
     4    What are some common stages in a Jenkins pipeline?
+          <br>
         Answer: A Jenkins pipeline typically includes the following stages, depending on the project:
+  <br>
         Checkout: Pulls code from the repository (e.g., GitHub).
+   <br>
         Build: Compiles or packages the application (e.g., docker build for my my-app).
+   <br>
         Test: Runs unit, integration, or end-to-end tests (e.g., npm test if configured).
+   <br>
         Deploy: Deploys the artifact to a server or container (e.g., docker run for my app on port 3000).
+   <br>
         Cleanup: Removes temporary files or stops old containers (e.g., docker rm in my setup).
+   <br>
         Notify: Sends success/failure notifications (e.g., via email or Slack).
+   <br>
         Example: My my-app pipeline includes Build and Deploy stages, with Cleanup planned as an enhancement.
+   <br>
     
     
     
     5   What is the difference between a declarative and scripted Jenkins pipeline?
+  <br>
         Declarative Pipeline:
             Structure: Uses a predefined structure with blocks like pipeline, agent, stages, and steps.
             Syntax: More concise and readable, ideal for beginners.
+  <br>
             Example:
                 pipeline {
                     agent any
@@ -69,16 +80,19 @@ This document contains common interview questions about Jenkins and CI/CD, along
                         }
                     }
                 }
-                    
+         <br>           
         Advantages: Easier to maintain, supports visual editing in Jenkins Blue Ocean.
+  <br>
         Scripted Pipeline:
             Structure: More flexible, written in Groovy with imperative programming.
             Syntax: Allows complex logic (e.g., loops, conditionals).
+  <br>
             Example:
                     node {
                         stage('Build') {
                             sh 'echo Building...'
                         }
                     }
+  <br>
         Advantages: Greater control, useful for advanced workflows.
         Key Difference: Declarative is structured and opinionated, while Scripted is flexible but requires more Groovy knowledge. My my-app uses declarative for simplicity.
